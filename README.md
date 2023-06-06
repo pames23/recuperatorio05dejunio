@@ -5,4 +5,6 @@
 ## Consideraciones especiales
 *
 *
-*
+* no llegue a probar la parte de pedidos
+* no hice el bonus
+

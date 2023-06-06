@@ -4,9 +4,9 @@ const httpStatusCodes = require('http2').constants;
 const getViandas = (_, res) => {
     res.status(httpStatusCodes.HTTP_STATUS_OK).json(viandas)
 };
-const getViandasCodigo = (req, res) => {
+const getViandasByCodigo = (req, res) => {
     const {codigo} = req.params;
-    const vianda = viandas.find(v => v.codigo === codigo);
+    const vianda = viandas.find(v => v.codigo == codigo);
     if (vianda) {
         res.json(vianda); 
        
@@ -18,7 +18,7 @@ const getViandasCodigo = (req, res) => {
     const codigo = req.params.codigo;
     const { aptoCeliaco, stock, descripcion } = req.body;
 
-    const vianda = viandas.find(v => v.codigo === codigo);
+    const vianda = viandas.find(v => v.codigo == codigo);
 
     if (vianda){
 
@@ -76,7 +76,7 @@ const getViandasCodigo = (req, res) => {
 
 module.exports = {
     getViandas,
-    getViandasCodigo,
+    getViandasByCodigo,
     putViandasCodigo,
     postViandas
 };
